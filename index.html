@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,13 +15,13 @@
             <input type="text" name="display" id="answer" />
           </div>
           <div>
-            <input type="button" value="%" onclick="display.value +='%'" />
             <input type="button" value="AC" onclick="display.value =''" />
             <input
               type="button"
               value="DEL"
               onclick="display.value = display.value.slice(0,-1);"
             />
+            <input type="button" value="%" onclick="display.value +='%'" />
             <input
               class="blue"
               type="button"
@@ -63,13 +63,13 @@
             />
           </div>
           <div>
-            <input type="button" value="+/-" onclick="display.value ='+/-'" />
+            <input type="button" value="+/-" onclick="toggleSign()" />
             <input type="button" value="0" onclick="display.value +='0'" />
-            <input type="button" value="." onclick="display.value ='.'" />
+            <input type="button" value="." onclick="appendDot()" />
             <input
               type="button"
               value="="
-              onclick="display.value = eval(display.value)"
+              onclick="calculate()"
               class="equal"
             />
           </div>
@@ -77,4 +77,5 @@
       </div>
     </div>
   </body>
+  <script src="logic.js"></script>
 </html>
